@@ -67,4 +67,7 @@ public class SirkulearKoe<T> {
 		bak = antall;
 		koe = hjelpetabell;
 	}
+	public T getElement(int index) {
+		return koe[index];
+	}
 }

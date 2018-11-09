@@ -94,6 +94,7 @@ public class Graf {
 		List<Node> besokt = new ArrayList<Node>();
 		SirkulearKoe<Node> koe = new SirkulearKoe<Node>();
 		koe.innKoe(node);
+		int j = 1;
 		while(!koe.erTom()) {
 			Node n  = koe.utKoe();
 			if(!besokt.contains(n)) {
@@ -102,8 +103,13 @@ public class Graf {
 				for(int i = 0; i<n.getNaboer().size();i++) {
 					koe.innKoe(n.getNaboer().get(i));
 				}
+				System.out.println("\nKøen er på gjennomgang " + j + ":\n");
+				for(int i = 0; i<koe.antall();i++) {
+					
+					System.out.println(""+ koe.getElement(i).getNavn());
+				}
 			}
-			
+			j++;
 		}
 		return besokt;
 	}

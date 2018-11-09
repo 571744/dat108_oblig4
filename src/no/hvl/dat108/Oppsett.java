@@ -50,16 +50,17 @@ public class Oppsett {
 		System.out.println("\nSå legger vi til en node: \n");
 		Node nyNode = new Node("E");
 		List<Node> nyNodeNaboer = new ArrayList<Node>();
-		nyNodeNaboer.add(node4);
+		nyNodeNaboer.add(node2);
 		
 		graf.leggTilNode(nyNode, nyNodeNaboer);
 		graf.printUt();
-		System.out.println("\nSå fjerner vi en kant mellom " + node2.getNavn() + " og " + node4.getNavn() + ".\n");
-		graf.fjernKant(node2, node4);
-		graf.printUt();
+//		System.out.println("\nSå fjerner vi en kant mellom " + node2.getNavn() + " og " + node4.getNavn() + ".\n");
+//		graf.fjernKant(node2, node4);
+//		graf.printUt();
 		
 		System.out.println("\nBreddeførst gjennomgang: \n");
 		List<Node> bredde = graf.breddeFoerst(node2);
+		System.out.println("\nEndelig gjennomgang: \n");
 		for(Node n : bredde) {
 			System.out.println(n.getNavn());
 		}

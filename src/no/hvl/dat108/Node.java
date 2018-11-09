@@ -7,15 +7,20 @@ public class Node {
 	
 	private String navn;
 	private List<Node> naboer;
-	
+
+
 	public Node(String navn) {
 		this.navn = navn;
 		
 	}
 
 
-	public Node(String navn, List<Node> naboer) {
-		this.navn = navn;
+	public List<Node> getNaboer() {
+		return naboer;
+	}
+
+
+	public void setNaboer(List<Node> naboer) {
 		this.naboer = naboer;
 	}
 

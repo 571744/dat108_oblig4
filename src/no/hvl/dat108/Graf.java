@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Graf {
 	List<Node> noder;
-	
+
 	public Graf(List<Node> noder) {
 		this.noder = noder;
 
@@ -18,10 +18,15 @@ public class Graf {
 		this.noder = noder;
 	}
 
-	@Override
-	public String toString() {
-		return "Graf [noder=" + noder + "]";
+	public void printUt() {
+		for(int i = 0; i<noder.size(); i++) {
+			System.out.println("\n" + noder.get(i).getNavn());
+			for(int j = 0; j<noder.get(i).getNaboer().size();j++) {
+				System.out.println("Har nabo: " +noder.get(i).getNaboer().get(j).getNavn());
+			}
+		}
+		
 	}
-	
+
 	
 }

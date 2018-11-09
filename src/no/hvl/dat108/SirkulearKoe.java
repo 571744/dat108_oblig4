@@ -1,8 +1,6 @@
 package no.hvl.dat108;
 
-
-
-public class SirkulearKoe<T>  {
+public class SirkulearKoe<T> {
 	private static final int STDK = 100;
 	private int front, bak, antall;
 	private T[] koe;
@@ -21,7 +19,6 @@ public class SirkulearKoe<T>  {
 		return koe;
 	}
 
-	
 	public void innKoe(T element) {
 		if (antall() == koe.length) {
 			utivd();
@@ -31,10 +28,9 @@ public class SirkulearKoe<T>  {
 		antall++;
 	}
 
-	
 	public T utKoe() {
 		T resultat = null;
-		if(!erTom()) {
+		if (!erTom()) {
 			resultat = koe[front];
 			front = (front + 1) % koe.length;
 			antall--;
@@ -42,13 +38,12 @@ public class SirkulearKoe<T>  {
 		return resultat;
 	}
 
-	
-	public T foerste()  {
-		if(!erTom()) {
+	public T foerste() {
+		if (!erTom()) {
 			return koe[front];
-		} return null;
+		}
+		return null;
 	}
-
 
 	public boolean erTom() {
 		boolean tom = false;
@@ -58,7 +53,6 @@ public class SirkulearKoe<T>  {
 		return tom;
 	}
 
-	
 	public int antall() {
 		return antall;
 	}

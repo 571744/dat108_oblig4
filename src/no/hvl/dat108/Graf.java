@@ -90,5 +90,21 @@ public class Graf {
 		return node;
 	}
 
-	
+	public List<Node> breddeFoerst(Node node) {
+		List<Node> besokt = new ArrayList<Node>();
+		SirkulearKoe<Node> koe = new SirkulearKoe<Node>();
+		koe.innKoe(node);
+		while(!koe.erTom()) {
+			Node n  = koe.utKoe();
+			if(!besokt.contains(n)) {
+				besokt.add(n);
+				
+				for(int i = 0; i<n.getNaboer().size();i++) {
+					koe.innKoe(n.getNaboer().get(i));
+				}
+			}
+			
+		}
+		return besokt;
+	}
 }

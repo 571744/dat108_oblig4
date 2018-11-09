@@ -1,21 +1,24 @@
 package no.hvl.dat108;
 
+import java.util.List;
+
 public class Node {
 
-	private String id;
+	
 	private String navn;
+	private List<Node> naboer;
 	
 	public Node(String navn) {
 		this.navn = navn;
+		
 	}
 
-	public String getId() {
-		return id;
+
+	public Node(String navn, List<Node> naboer) {
+		this.navn = navn;
+		this.naboer = naboer;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getNavn() {
 		return navn;

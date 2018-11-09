@@ -1,5 +1,27 @@
 package no.hvl.dat108;
 
-public class Graf {
+import java.util.List;
 
+public class Graf {
+	List<Node> noder;
+	
+	public Graf(List<Node> noder) {
+		this.noder = noder;
+
+	}
+
+	public List<Node> getNoder() {
+		return noder;
+	}
+
+	public void setNoder(List<Node> noder) {
+		this.noder = noder;
+	}
+
+	@Override
+	public String toString() {
+		return "Graf [noder=" + noder + "]";
+	}
+	
+	
 }

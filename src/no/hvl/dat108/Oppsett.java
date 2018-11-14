@@ -16,7 +16,7 @@ public class Oppsett {
 		Node node2 = new Node("B");
 		Node node3 = new Node("C");
 		Node node4 = new Node("D");
-		Node node5 = new Node("F");
+		
 		
 		Kant k1 = new Kant(node2, 3);
 		naboTil1.add(k1);
@@ -49,9 +49,12 @@ public class Oppsett {
 		noder.add(node3);
 		noder.add(node4);
 		Graf graf = new Graf(noder);
-		
+		System.out.println("Grafen vår ser slik ut:");
+		graf.printUt();
 		//Tester leggtil-metoden
+		System.out.println("\nSå legger vi til en node: ");
 		List<Kant> naboTil5 = new ArrayList<Kant>();
+		Node node5 = new Node("F");
 		
 		Kant k9 = new Kant(node1, 10);
 		Kant k10 = new Kant(node2, 2);
@@ -61,8 +64,11 @@ public class Oppsett {
 		naboTil5.add(k10);
 		naboTil5.add(k11);
 		naboTil5.add(k12);
-		graf.leggTilNode(node5, naboTil5);
+		Node lagtTil = graf.leggTilNode(node5, naboTil5);
+		
+		System.out.println("\nLa til node: " + lagtTil.getNavn());
 		graf.printUt();
+		
 		
 		
 		System.out.println("\nSå fjerner vi en node: \n");
@@ -70,18 +76,16 @@ public class Oppsett {
 		System.out.println("Fjernet: " + fjernet.getNavn());
 		graf.printUt();
 
-		System.out.println("\nSå legger vi til en node: \n");
-		Node nyNode = new Node("E");
-		List<Node> nyNodeNaboer = new ArrayList<Node>();
-		nyNodeNaboer.add(node2);
-
-		Node lagtTil = graf.leggTilNode(nyNode, nyNodeNaboer);
-		System.out.println("La til node: " + lagtTil.getNavn());
-		graf.printUt();
+		
+	
+		
+		
 		System.out.println("\nSå fjerner vi en kant mellom " + node2.getNavn() + " og " + node4.getNavn() + ".\n");
 		graf.fjernKant(node2, node4);
 		graf.printUt();
 
+		
+		
 		System.out.println("\nBreddeførst gjennomgang: \n");
 		List<Node> bredde = graf.breddeFoerst(node2);
 		System.out.println("\nEndelig gjennomgang: \n");

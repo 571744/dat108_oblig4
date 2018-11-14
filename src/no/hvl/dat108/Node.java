@@ -6,7 +6,7 @@ public class Node {
 
 	
 	private String navn;
-	private List<Node> naboer;
+	private List<Kant> naboer;
 
 
 	public Node(String navn) {
@@ -15,12 +15,12 @@ public class Node {
 	}
 
 
-	public List<Node> getNaboer() {
+	public List<Kant> getNaboer() {
 		return naboer;
 	}
 
 
-	public void setNaboer(List<Node> naboer) {
+	public void setNaboer(List<Kant> naboer) {
 		this.naboer = naboer;
 	}
 

@@ -98,21 +98,20 @@ public class Graf {
 	public Kant fjernKant(Node node, Node naboNode) {
 		for (int i = 0; i < node.getNaboer().size(); i++) {
 			Kant a = node.getNaboer().get(i);
-			
-			if(a.getNabo().equals(naboNode)){
+
+			if (a.getNabo().equals(naboNode)) {
 				node.getNaboer().remove(a);
-				for(int j = 0; j<naboNode.getNaboer().size();j++) {
+				for (int j = 0; j < naboNode.getNaboer().size(); j++) {
 					Kant b = naboNode.getNaboer().get(j);
-					if(b.getNabo().equals(node)) {
+					if (b.getNabo().equals(node)) {
 						naboNode.getNaboer().remove(b);
 						return a;
 					}
 				}
 			}
-			
+
 		}
-		
-		
+
 		return null;
 
 	}
@@ -122,21 +121,27 @@ public class Graf {
 		SirkulearKoe<Node> koe = new SirkulearKoe<Node>();
 		koe.innKoe(node);
 		int j = 1;
-		while (!koe.erTom()) {
+		while (!koe.erTom() && (noder.size() != besokt.size())) {
 			Node n = koe.utKoe();
+			System.out.println("\nKøen er på gjennomgang " + j + ":\n");
 			if (!besokt.contains(n)) {
 				besokt.add(n);
 
 				for (int i = 0; i < n.getNaboer().size(); i++) {
 					koe.innKoe(n.getNaboer().get(i).getNabo());
 				}
-				System.out.println("\nKøen er på gjennomgang " + j + ":\n");
-				for (int i = 0; i < koe.antall(); i++) {
+
+				for (int i = koe.getFront(); i < koe.getFront() + koe.antall(); i++) {
 
 					System.out.println("" + koe.getElement(i).getNavn());
 				}
+			} else {
+				System.out.println("* Elementet " + n.getNavn() +" er allerede besøkt");
 			}
 			j++;
+		}
+		if(!koe.erTom()) {
+			System.out.println("\nGjennomgangen stoppes etter " + (j-1) + " gjennomganger fordi alle elementene nå er besøkt.");
 		}
 		return besokt;
 	}

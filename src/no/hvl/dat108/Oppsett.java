@@ -86,7 +86,7 @@ public class Oppsett {
 
 		
 		
-		System.out.println("\nBreddeførst gjennomgang: \n");
+		System.out.println("\nBreddeførst gjennomgang fra node B: \n");
 		List<Node> bredde = graf.breddeFoerst(node2);
 		System.out.println("\nEndelig gjennomgang: \n");
 		for (Node n : bredde) {

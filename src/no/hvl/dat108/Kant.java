@@ -1,6 +1,6 @@
 package no.hvl.dat108;
 
-public class Kant {
+public class Kant implements Comparable<Kant>{
 
 
 	private Node nabo;
@@ -30,6 +30,13 @@ public class Kant {
 	@Override
 	public String toString() {
 		return "Kant [nabo=" + nabo + ", vekt=" + vekt + "]";
+	}
+
+	@Override
+	public int compareTo(Kant o) {
+		Integer a = this.vekt;
+		Integer b = o.vekt;
+		return a.compareTo(b);
 	}
 
 	

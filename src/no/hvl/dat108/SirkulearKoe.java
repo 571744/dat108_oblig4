@@ -70,4 +70,7 @@ public class SirkulearKoe<T> {
 	public T getElement(int index) {
 		return koe[index];
 	}
+	public int getFront() {
+		return front;
+	}
 }

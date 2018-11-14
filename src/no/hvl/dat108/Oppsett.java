@@ -6,35 +6,44 @@ import java.util.List;
 public class Oppsett {
 	public static void Generering() {
 	
-		List<Node> naboTil1 = new ArrayList<Node>();
-		List<Node> naboTil2 = new ArrayList<Node>();
-		List<Node> naboTil3 = new ArrayList<Node>();
-		List<Node> naboTil4 = new ArrayList<Node>();
-		List<Node> naboTil5 = new ArrayList<Node>();
+		List<Kant> naboTil1 = new ArrayList<Kant>();
+		List<Kant> naboTil2 = new ArrayList<Kant>();
+		List<Kant> naboTil3 = new ArrayList<Kant>();
+		List<Kant> naboTil4 = new ArrayList<Kant>();
+
 		List<Node> noder = new ArrayList<Node>();
 		Node node1 = new Node("A");
 		Node node2 = new Node("B");
 		Node node3 = new Node("C");
 		Node node4 = new Node("D");
 		Node node5 = new Node("F");
-
-		naboTil1.add(node2);
+		
+		Kant k1 = new Kant(node2, 3);
+		naboTil1.add(k1);
 		node1.setNaboer(naboTil1);
 
-		naboTil2.add(node1);
-		naboTil2.add(node3);
-		naboTil2.add(node4);
-
+		Kant k2 = new Kant(node1, 3);
+		Kant k3 = new Kant(node3, 5);
+		Kant k4 = new Kant(node4, 7);
+		naboTil2.add(k2);
+		naboTil2.add(k3);
+		naboTil2.add(k4);
 		node2.setNaboer(naboTil2);
 
-		naboTil3.add(node2);
-		naboTil3.add(node4);
+		Kant k5 = new Kant(node2, 5);
+		Kant k6 = new Kant(node4, 1);
+		naboTil3.add(k5);
+		naboTil3.add(k6);
 		node3.setNaboer(naboTil3);
 
-		naboTil4.add(node2);
-		naboTil4.add(node3);
+		
+		Kant k7 = new Kant(node2, 7);
+		Kant k8 = new Kant(node3, 1);
+		naboTil4.add(k7);
+		naboTil4.add(k8);
 		node4.setNaboer(naboTil4);
 
+		
 		noder.add(node1);
 		noder.add(node2);
 		noder.add(node3);
@@ -42,12 +51,17 @@ public class Oppsett {
 		Graf graf = new Graf(noder);
 		
 		//Tester leggtil-metoden
-		List<Node> node5naboer = new ArrayList<Node>();
-		node5naboer.add(node3);
-		node5naboer.add(node4);
-		node5naboer.add(node2);
-		node5naboer.add(node1);
-		graf.leggTilNode(node5, node5naboer);
+		List<Kant> naboTil5 = new ArrayList<Kant>();
+		
+		Kant k9 = new Kant(node1, 10);
+		Kant k10 = new Kant(node2, 2);
+		Kant k11= new Kant(node3, 4);
+		Kant k12 = new Kant(node4, 5);
+		naboTil5.add(k9);
+		naboTil5.add(k10);
+		naboTil5.add(k11);
+		naboTil5.add(k12);
+		graf.leggTilNode(node5, naboTil5);
 		graf.printUt();
 		
 		

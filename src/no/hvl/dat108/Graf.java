@@ -23,7 +23,8 @@ public class Graf {
 		for (int i = 0; i < noder.size(); i++) {
 			System.out.println("\n" + noder.get(i).getNavn());
 			for (int j = 0; j < noder.get(i).getNaboer().size(); j++) {
-				System.out.println("Har nabo: " + noder.get(i).getNaboer().get(j).getNabo().getNavn());
+				Kant k = noder.get(i).getNaboer().get(j);
+				System.out.println("Har nabo: " + k.getNabo().getNavn() + ", med vekt: " + k.getVekt());
 			}
 		}
 

@@ -41,9 +41,15 @@ public class Graf {
 		}
 
 	}
-
+	public int totalvekt() {
+		int total = 0;
+		for(AltKant k : kantMST) {
+			total += k.getVekt();
+		}
+		return total;
+	}
 	public void printMST() {
-		System.out.println("Minste spennetre består av ");
+		System.out.println("Minste spennetre, bestående av " + kantMST.size() + " kanter med en totalvekt på " + totalvekt() +", består av: ");
 		for (int i = 0; i < kantMST.size(); i++) {
 			System.out.println("\nKant fra " + kantMST.get(i).getNode1() + " til " 
 		+ kantMST.get(i).getNode2() + ", med vekt: " + kantMST.get(i).getVekt());

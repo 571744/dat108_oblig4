@@ -118,11 +118,21 @@ public class Oppsett {
 		Node node8 = new Node("I");
 		
 		Kant k16= new Kant(node2, 1);
-		Kant k17 = new Kant(node7, 1);
+		Kant k17 = new Kant(node7, 3);
 		
 		naboTil8.add(k16);
 		naboTil8.add(k17);
 		graf.leggTilNode(node8, naboTil8);
+		
+		List<Kant> naboTil9 = new ArrayList<Kant>();
+		Node node9 = new Node("J");
+		
+		Kant k18= new Kant(node5, 6);
+		Kant k19 = new Kant(node8, 2);
+		
+		naboTil9.add(k18);
+		naboTil9.add(k19);
+		graf.leggTilNode(node9, naboTil9);
 		
 		
 		System.out.println("\nVi prøver her å finne minnste spenntre (MST): \n");

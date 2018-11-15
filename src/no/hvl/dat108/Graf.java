@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Graf {
 	List<Node> noder;
+	
+	List<Node> MST; 
+	TabellHaug<Kant> kanter = new TabellHaug<Kant>();
 
 	public Graf(List<Node> noder) {
 		this.noder = noder;
@@ -145,4 +148,18 @@ public class Graf {
 		}
 		return besokt;
 	}
+	
+	public List<Node> finnMST(){
+		for (int i = 0; i < noder.size(); i++) {
+			prim(noder.get(i));
+		}
+		return MST;
+	}
+	
+	public void prim(Node node) {
+		for (Kant a : node.getNaboer()) {
+			Kant k = kanter.fjernMinste();
+		}
+	}
+	
 }

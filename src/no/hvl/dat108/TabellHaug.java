@@ -6,6 +6,7 @@ public class TabellHaug<T extends Comparable<T>> {
 	private int antall;
 	private static final int STDK = 100;
 
+	@SuppressWarnings("unchecked")
 	public TabellHaug() {
 		data = (T[]) new Comparable[STDK];
 		antall = 0;
@@ -22,6 +23,7 @@ public class TabellHaug<T extends Comparable<T>> {
 		// Bytt om oppover hvis nødvendig
 	}
 
+	@SuppressWarnings("unchecked")
 	private void utvidTabell() {
 		// Dobler tabellen ved behov for utviding
 		int lengde = data.length;

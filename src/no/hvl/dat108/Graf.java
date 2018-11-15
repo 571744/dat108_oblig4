@@ -5,13 +5,21 @@ import java.util.List;
 
 public class Graf {
 	List<Node> noder;
-	
-	List<Node> MST; 
-	TabellHaug<Kant> kanter = new TabellHaug<Kant>();
+
+	List<Node> MST;
+	TabellHaug<AltKant> kanter = new TabellHaug<AltKant>();
 
 	public Graf(List<Node> noder) {
 		this.noder = noder;
 
+	}
+
+	public List<Node> getMST() {
+		return MST;
+	}
+
+	public void setMST(List<Node> mST) {
+		MST = mST;
 	}
 
 	public List<Node> getNoder() {
@@ -31,6 +39,13 @@ public class Graf {
 			}
 		}
 
+	}
+
+	public void printMST() {
+		System.out.println("Minste spenntre ");
+		for (int i = 0; i < MST.size(); i++) {
+			System.out.println("");
+		}
 	}
 
 	public Node fjernNode(Node node) {
@@ -139,27 +154,45 @@ public class Graf {
 					System.out.println("" + koe.getElement(i).getNavn());
 				}
 			} else {
-				System.out.println("* Elementet " + n.getNavn() +" er allerede besøkt");
+				System.out.println("* Elementet " + n.getNavn() + " er allerede besøkt");
 			}
 			j++;
 		}
-		if(!koe.erTom()) {
-			System.out.println("\nGjennomgangen stoppes etter " + (j-1) + " gjennomganger fordi alle elementene nå er besøkt.");
+		if (!koe.erTom()) {
+			System.out.println(
+					"\nGjennomgangen stoppes etter " + (j - 1) + " gjennomganger fordi alle elementene nå er besøkt.");
 		}
 		return besokt;
 	}
-	
-	public List<Node> finnMST(){
-		for (int i = 0; i < noder.size(); i++) {
-			prim(noder.get(i));
-		}
-		return MST;
-	}
-	
+
+	// public List<Node> finnMST(){
+	// for (int i = 0; i < noder.size(); i++) {
+	// prim(noder.get(i));
+	// }
+	// return MST;
+	// }
+
 	public void prim(Node node) {
+		MST.add(node);
+
 		for (Kant a : node.getNaboer()) {
-			Kant k = kanter.fjernMinste();
+			AltKant ak = new AltKant(node, a.getNabo(), a.getVekt());
+			kanter.leggTilElement(ak);
+		}
+		while (!kanter.erTom()) {
+			AltKant k = kanter.fjernMinste();
+
+			if (!MST.contains(k.getNode2())) {
+				Node n = k.getNode2();
+				MST.add(n);
+				for (Kant b : n.getNaboer()) {
+					if (!MST.contains(b.getNabo())) {
+						AltKant bk = new AltKant(n, b.getNabo(), b.getVekt());
+						kanter.leggTilElement(bk);
+					}
+				}
+			}
 		}
 	}
-	
+
 }

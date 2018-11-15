@@ -15,9 +15,34 @@ public class AltKant implements Comparable<AltKant> {
 		
 	}
 	
+	public Node getNode1() {
+		return node1;
+	}
+
+	public void setNode1(Node node1) {
+		this.node1 = node1;
+	}
+
+	public Node getNode2() {
+		return node2;
+	}
+
+	public void setNode2(Node node2) {
+		this.node2 = node2;
+	}
+
+	public int getVekt() {
+		return vekt;
+	}
+
+	public void setVekt(int vekt) {
+		this.vekt = vekt;
+	}
+
 	@Override
-	public int compareTo(AltKant o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(AltKant k) {
+		Integer a = this.vekt;
+		Integer b = k.vekt;
+		return a.compareTo(b);
 	}
 }

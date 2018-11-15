@@ -92,6 +92,12 @@ public class Oppsett {
 		for (Node n : bredde) {
 			System.out.println(n.getNavn());
 		}
-
+		
+		System.out.println("\nVi prøver her å finne minnste spenntre (MST): \n");
+		graf.prim(node4);
+		List<Node> MST = graf.getMST();
+		for(Node n : MST) {
+			System.out.println(n.getNavn());
+		}
 	}
 }

@@ -59,7 +59,8 @@ public class TabellHaug<T extends Comparable<T>> {
 			svar = data[0];
 			data[0] = data[antall - 1];
 			reparerNed();
-			// Bytter om nedover hvis nødvendig antall--;
+			// Bytter om nedover hvis nødvendig
+			antall--;
 		}
 		return svar;
 	}

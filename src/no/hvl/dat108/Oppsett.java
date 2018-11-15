@@ -51,6 +51,8 @@ public class Oppsett {
 		Graf graf = new Graf(noder);
 		System.out.println("Grafen vår ser slik ut:");
 		graf.printUt();
+		
+		
 		//Tester leggtil-metoden
 		System.out.println("\nSå legger vi til en node: ");
 		List<Kant> naboTil5 = new ArrayList<Kant>();
@@ -93,11 +95,41 @@ public class Oppsett {
 			System.out.println(n.getNavn());
 		}
 		
+		List<Kant> naboTil6 = new ArrayList<Kant>();
+		Node node6 = new Node("G");
+		
+		Kant k13 = new Kant(node4, 4);
+		
+		naboTil6.add(k13);
+		graf.leggTilNode(node6, naboTil6);
+		
+		
+		List<Kant> naboTil7 = new ArrayList<Kant>();
+		Node node7 = new Node("H");
+		
+		Kant k14 = new Kant(node4, 4);
+		Kant k15 = new Kant(node6, 1);
+		
+		naboTil7.add(k14);
+		naboTil7.add(k15);
+		graf.leggTilNode(node7, naboTil7);
+		
+		List<Kant> naboTil8 = new ArrayList<Kant>();
+		Node node8 = new Node("I");
+		
+		Kant k16= new Kant(node2, 1);
+		Kant k17 = new Kant(node7, 1);
+		
+		naboTil8.add(k16);
+		naboTil8.add(k17);
+		graf.leggTilNode(node8, naboTil8);
+		
+		
 		System.out.println("\nVi prøver her å finne minnste spenntre (MST): \n");
+	
 		graf.prim(node4);
+		
 		List<Node> MST = graf.getMST();
-		for(Node n : MST) {
-			System.out.println(n.getNavn());
-		}
+		graf.printMST();
 	}
 }

@@ -6,7 +6,8 @@ import java.util.List;
 public class Graf {
 	List<Node> noder;
 
-	List<Node> MST;
+	List<Node> MST = new ArrayList<Node>();
+	List<AltKant> kantMST = new ArrayList<AltKant>();
 	TabellHaug<AltKant> kanter = new TabellHaug<AltKant>();
 
 	public Graf(List<Node> noder) {
@@ -42,9 +43,10 @@ public class Graf {
 	}
 
 	public void printMST() {
-		System.out.println("Minste spenntre ");
-		for (int i = 0; i < MST.size(); i++) {
-			System.out.println("");
+		System.out.println("Minste spennetre består av ");
+		for (int i = 0; i < kantMST.size(); i++) {
+			System.out.println("\nKant fra " + kantMST.get(i).getNode1() + " til " 
+		+ kantMST.get(i).getNode2() + ", med vekt: " + kantMST.get(i).getVekt());
 		}
 	}
 
@@ -165,26 +167,18 @@ public class Graf {
 		return besokt;
 	}
 
-	// public List<Node> finnMST(){
-	// for (int i = 0; i < noder.size(); i++) {
-	// prim(noder.get(i));
-	// }
-	// return MST;
-	// }
-
 	public void prim(Node node) {
 		MST.add(node);
-
 		for (Kant a : node.getNaboer()) {
 			AltKant ak = new AltKant(node, a.getNabo(), a.getVekt());
 			kanter.leggTilElement(ak);
 		}
 		while (!kanter.erTom()) {
 			AltKant k = kanter.fjernMinste();
-
 			if (!MST.contains(k.getNode2())) {
 				Node n = k.getNode2();
 				MST.add(n);
+				kantMST.add(k);
 				for (Kant b : n.getNaboer()) {
 					if (!MST.contains(b.getNabo())) {
 						AltKant bk = new AltKant(n, b.getNabo(), b.getVekt());

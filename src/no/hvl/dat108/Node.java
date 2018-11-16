@@ -9,7 +9,6 @@ public class Node  {
 
 	public Node(String navn) {
 		this.navn = navn;
-
 	}
 
 	public List<Kant> getNaboer() {
@@ -27,8 +26,6 @@ public class Node  {
 	public void setNavn(String navn) {
 		this.navn = navn;
 	}
-
-	
 
 	@Override
 	public String toString() {

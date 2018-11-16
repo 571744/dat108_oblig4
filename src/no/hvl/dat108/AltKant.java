@@ -2,8 +2,6 @@ package no.hvl.dat108;
 
 public class AltKant implements Comparable<AltKant> {
 
-	
-
 	private Node node1;
 	private Node node2;
 	private int vekt;
@@ -12,7 +10,6 @@ public class AltKant implements Comparable<AltKant> {
 		this.node1 = node1;
 		this.node2 = node2;
 		this.vekt = vekt;
-		
 	}
 	
 	public Node getNode1() {

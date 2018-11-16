@@ -1,6 +1,7 @@
 package no.hvl.dat108;
 
 public class TabellHaug<T extends Comparable<T>> {
+	
 	// Lager en minimumshaug
 	private T[] data;
 	private int antall;

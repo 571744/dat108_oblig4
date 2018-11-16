@@ -1,0 +1,25 @@
+Oppgave2)
+
+a) 
+P: 
+P er kompleksitetsklassen over alle avgjørelsesproblemer som er effektivt løsbare. Sagt på en annen måte, problemer som kan løses i polynomisk tid.
+
+NP:
+Vi vet at NP-problemet er løsbart, men vi har ingen god algoritme eller framgangsmåte for å løse det, som medfører at det kan ta veldig lang tid før problemet løses. Vi vet derimot at løsningen til et NP-problem kan verifiseres i polynomisk tid – hvis vi for eksempel tipper oss frem til en løsning så kan vi raskt beregne om den er korrekt eller ei. P er en undermengde av NP. 
+
+NPC:
+NPC, NP-complete, er mengden de vanskeligste problemene i NP. Ingen har til nå greid å løse NPC-problemer i polynomisk tid. 
+
+
+b) Siden det (mest sannsynlig) ikke finnes noen algoritme for NPC-problemer som løser problemet i polynomisk, så har vi det vi kaller n-tilnærmingsalgoritmer som finne en tilnærmet optimal løsning. 
+
+c)
+i) E F D A C B E 
+
+ii) F E B A C D F 
+
+ii) C*=13
+C=17
+p(n)≥max(C/(C*),(C*)/C)
+p(n)≥max(17/13,13/17)=1,31
+Nærmeste nabo er en 1,31-tilnmæringsalgoritme

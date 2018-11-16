@@ -9,7 +9,6 @@ public class Kant implements Comparable<Kant>{
 
 	
 	public Kant(Node slutt, int vekt) {
-
 		this.nabo = slutt;
 		this.vekt = vekt;
 	}
@@ -38,8 +37,4 @@ public class Kant implements Comparable<Kant>{
 		Integer b = o.vekt;
 		return a.compareTo(b);
 	}
-
-	
-	
-	
 }

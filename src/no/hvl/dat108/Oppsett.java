@@ -10,13 +10,13 @@ public class Oppsett {
 		List<Kant> naboTil2 = new ArrayList<Kant>();
 		List<Kant> naboTil3 = new ArrayList<Kant>();
 		List<Kant> naboTil4 = new ArrayList<Kant>();
-
+		
 		List<Node> noder = new ArrayList<Node>();
+		
 		Node node1 = new Node("A");
 		Node node2 = new Node("B");
 		Node node3 = new Node("C");
 		Node node4 = new Node("D");
-		
 		
 		Kant k1 = new Kant(node2, 3);
 		naboTil1.add(k1);

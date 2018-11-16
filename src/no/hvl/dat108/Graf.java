@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Graf {
 	List<Node> noder;
-
 	List<Node> MST = new ArrayList<Node>();
 	List<AltKant> kantMST = new ArrayList<AltKant>();
 	TabellHaug<AltKant> kanter = new TabellHaug<AltKant>();
